@@ -1,0 +1,185 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety net: deny everything by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 3 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return isVerifiedUser() && (
+        request.auth.token.email == 'hemalesh.250141@cse.ritchennai.edu.in' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isValidParticipant(data) {
+      return data.keys().hasAll(['uid', 'fullName', 'email', 'mobile', 'whatsapp', 'department', 'institution', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'fullName', 'email', 'mobile', 'whatsapp', 'department', 'institution', 'updatedAt'])
+        && data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128
+        && data.fullName is string && data.fullName.size() >= 2 && data.fullName.size() <= 100
+        && data.email is string && data.email.size() >= 5 && data.email.size() <= 160
+        && data.mobile is string && data.mobile.matches('^[6-9][0-9]{9}$')
+        && data.whatsapp is string && data.whatsapp.matches('^[6-9][0-9]{9}$')
+        && data.department is string && data.department.size() >= 2 && data.department.size() <= 120
+        && data.institution is string && data.institution.size() >= 2 && data.institution.size() <= 160
+        && data.updatedAt is string && data.updatedAt.size() >= 10 && data.updatedAt.size() <= 64;
+    }
+
+    function isValidFeeForSize(memberCount, fee) {
+      return (memberCount == 1 && fee == 150)
+        || (memberCount == 2 && fee == 300)
+        || (memberCount == 3 && fee == 450)
+        || (memberCount == 4 && fee == 500);
+    }
+
+    function isValidRegistration(data) {
+      return data.keys().hasAll([
+          'id', 'teamName', 'leaderUid', 'leaderName', 'leaderEmail', 'leaderMobile',
+          'institution', 'trackId', 'memberCount', 'members', 'projectTitle',
+          'abstract', 'inclusionImpact', 'registrationFee', 'paymentStatus',
+          'paymentScreenshotUrl', 'paymentUploadedAt', 'status', 'createdAt', 'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'id', 'teamName', 'leaderUid', 'leaderName', 'leaderEmail', 'leaderMobile',
+          'institution', 'trackId', 'memberCount', 'members', 'projectTitle',
+          'abstract', 'inclusionImpact', 'ieeeMemberId', 'registrationFee', 'paymentStatus',
+          'paymentScreenshotUrl', 'paymentUploadedAt', 'paymentVerifiedAt', 'paymentVerifiedBy',
+          'paymentRejectionReason', 'status', 'createdAt', 'updatedAt'
+        ])
+        && data.id is string && data.id.matches('^HAR-2027-[A-Z0-9]{5}$')
+        && data.teamName is string && data.teamName.size() >= 3 && data.teamName.size() <= 80
+        && data.leaderUid is string && data.leaderUid.size() >= 1 && data.leaderUid.size() <= 128
+        && data.leaderName is string && data.leaderName.size() >= 2 && data.leaderName.size() <= 100
+        && data.leaderEmail is string && data.leaderEmail.size() >= 5 && data.leaderEmail.size() <= 160
+        && data.leaderMobile is string && data.leaderMobile.matches('^[6-9][0-9]{9}$')
+        && data.institution is string && data.institution.size() >= 2 && data.institution.size() <= 160
+        && data.trackId in ['linguaverse', 'abilityx', 'roots', 'flowforge', 'iotverse']
+        && data.memberCount is number && data.memberCount >= 1 && data.memberCount <= 4
+        && data.members is list && data.members.size() == data.memberCount - 1
+        && (data.members.size() == 0 || (data.members[0] is map && data.members[0].keys().hasAll(['name', 'email', 'mobile'])))
+        && data.projectTitle is string && data.projectTitle.size() >= 6 && data.projectTitle.size() <= 140
+        && data.abstract is string && data.abstract.size() >= 20 && data.abstract.size() <= 2500
+        && data.inclusionImpact is string && data.inclusionImpact.size() >= 15 && data.inclusionImpact.size() <= 1200
+        && (!('ieeeMemberId' in data) || (data.ieeeMemberId is string && data.ieeeMemberId.size() <= 40))
+        && data.registrationFee is number && isValidFeeForSize(data.memberCount, data.registrationFee)
+        && data.paymentStatus in ['PENDING', 'VERIFIED', 'REJECTED']
+        && data.paymentScreenshotUrl is string && data.paymentScreenshotUrl.size() >= 10 && data.paymentScreenshotUrl.size() <= 220000
+        && data.paymentUploadedAt is string && data.paymentUploadedAt.size() >= 10 && data.paymentUploadedAt.size() <= 64
+        && (!('paymentVerifiedAt' in data) || (data.paymentVerifiedAt is string && data.paymentVerifiedAt.size() <= 64))
+        && (!('paymentVerifiedBy' in data) || (data.paymentVerifiedBy is string && data.paymentVerifiedBy.size() <= 100))
+        && (!('paymentRejectionReason' in data) || (data.paymentRejectionReason is string && data.paymentRejectionReason.size() <= 500))
+        && data.status in ['Submitted', 'Under Review', 'Shortlisted', 'Finalist', 'Rejected']
+        && data.createdAt is string && data.createdAt.size() >= 10 && data.createdAt.size() <= 64
+        && data.updatedAt is string && data.updatedAt.size() >= 10 && data.updatedAt.size() <= 64;
+    }
+
+    function isValidPaymentConfig(data) {
+      return data.keys().hasAll(['qrImageUrl', 'upiId', 'payeeName', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['qrImageUrl', 'upiId', 'payeeName', 'updatedAt', 'updatedBy'])
+        && data.qrImageUrl is string && data.qrImageUrl.size() <= 220000
+        && data.upiId is string && data.upiId.size() >= 5 && data.upiId.size() <= 100
+        && data.payeeName is string && data.payeeName.size() >= 2 && data.payeeName.size() <= 100
+        && data.updatedAt is string && data.updatedAt.size() >= 10 && data.updatedAt.size() <= 64
+        && data.updatedBy is string && data.updatedBy.size() >= 2 && data.updatedBy.size() <= 100;
+    }
+
+    function isValidPosterConfig(data) {
+      return data.keys().hasAll(['posterImageUrl', 'title', 'caption', 'isHidden', 'isCustom', 'updatedAt', 'updatedBy'])
+        && data.keys().hasOnly(['posterImageUrl', 'title', 'caption', 'isHidden', 'isCustom', 'updatedAt', 'updatedBy'])
+        && data.posterImageUrl is string && data.posterImageUrl.size() <= 900000
+        && data.title is string && data.title.size() <= 120
+        && data.caption is string && data.caption.size() <= 220
+        && data.isHidden is bool
+        && data.isCustom is bool
+        && data.updatedAt is string && data.updatedAt.size() >= 10 && data.updatedAt.size() <= 64
+        && data.updatedBy is string && data.updatedBy.size() >= 2 && data.updatedBy.size() <= 100;
+    }
+
+    match /participants/{uid} {
+      allow get: if isValidId(uid) && (isAdmin() || (isSignedIn() && request.auth.uid == uid));
+      allow list: if isAdmin() || (isSignedIn() && resource.data.uid == request.auth.uid);
+      allow create: if isValidId(uid)
+        && isVerifiedUser()
+        && request.auth.uid == uid
+        && isValidParticipant(incoming())
+        && incoming().uid == uid;
+      allow update: if isValidId(uid)
+        && isVerifiedUser()
+        && (isAdmin() || request.auth.uid == uid)
+        && isValidParticipant(incoming())
+        && incoming().uid == existing().uid;
+      allow delete: if false;
+    }
+
+    match /registrations/{regId} {
+      allow get: if isValidId(regId) && (isAdmin() || (isSignedIn() && existing().leaderUid == request.auth.uid));
+      allow list: if isAdmin() || (isSignedIn() && resource.data.leaderUid == request.auth.uid);
+      allow create: if isValidId(regId)
+        && isVerifiedUser()
+        && isValidRegistration(incoming())
+        && incoming().id == regId
+        && incoming().leaderUid == request.auth.uid
+        && incoming().status == 'Submitted'
+        && incoming().paymentStatus == 'PENDING';
+      allow update: if isValidId(regId)
+        && isVerifiedUser()
+        && isValidRegistration(incoming())
+        && incoming().id == existing().id
+        && incoming().leaderUid == existing().leaderUid
+        && incoming().createdAt == existing().createdAt
+        && incoming().registrationFee == existing().registrationFee
+        && (
+          isAdmin() ||
+          (
+            existing().leaderUid == request.auth.uid
+            && existing().paymentStatus != 'VERIFIED'
+            && incoming().paymentStatus == 'PENDING'
+            && incoming().status == existing().status
+            && incoming().diff(existing()).affectedKeys().hasOnly(['paymentScreenshotUrl', 'paymentUploadedAt', 'paymentStatus', 'updatedAt'])
+          )
+        );
+      allow delete: if isValidId(regId) && isAdmin();
+    }
+
+    match /payment_config/{configId} {
+      allow get: if configId == 'active_qr' || configId == 'active_poster';
+      allow list: if false;
+      allow create, update: if isValidId(configId) && isAdmin() && (
+        (configId == 'active_qr' && isValidPaymentConfig(incoming())) ||
+        (configId == 'active_poster' && isValidPosterConfig(incoming()))
+      );
+      allow delete: if false;
+    }
+
+    match /admins/{uid} {
+      allow get: if isValidId(uid) && isSignedIn() && request.auth.uid == uid;
+      allow list, write: if false;
+    }
+
+    match /test/{docId} {
+      allow get: if docId == 'connection';
+      allow list, write: if false;
+    }
+  }
+}

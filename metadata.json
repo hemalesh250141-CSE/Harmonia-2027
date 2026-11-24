@@ -1,0 +1,6 @@
+{
+  "name": "HARMONIA 2027 — International Hackathon Portal",
+  "description": "Ideas Beyond Borders · 24-hour international hackathon organized by Rajalakshmi Institute of Technology (RIT), Chennai CSE in association with IEEE Computer Society & iDataMind.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,134 @@
+{
+  "entities": {
+    "TeamMember": {
+      "title": "TeamMember",
+      "description": "Additional team member contact record (Member #2 to #4).",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 160 },
+        "mobile": { "type": "string", "pattern": "^[6-9][0-9]{9}$", "maxLength": 15 }
+      },
+      "required": ["name", "email", "mobile"]
+    },
+    "Registration": {
+      "title": "Registration",
+      "description": "Team submission, proposal, and payment audit record for HARMONIA 2027.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^HAR-2027-[A-Z0-9]{5}$", "maxLength": 32 },
+        "teamName": { "type": "string", "minLength": 3, "maxLength": 80 },
+        "leaderUid": { "type": "string", "maxLength": 128 },
+        "leaderName": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "leaderEmail": { "type": "string", "format": "email", "maxLength": 160 },
+        "leaderMobile": { "type": "string", "pattern": "^[6-9][0-9]{9}$", "maxLength": 15 },
+        "institution": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "trackId": {
+          "type": "string",
+          "enum": ["linguaverse", "abilityx", "roots", "flowforge", "iotverse"],
+          "maxLength": 32
+        },
+        "memberCount": { "type": "number" },
+        "members": { "type": "array" },
+        "projectTitle": { "type": "string", "minLength": 6, "maxLength": 140 },
+        "abstract": { "type": "string", "minLength": 20, "maxLength": 2500 },
+        "inclusionImpact": { "type": "string", "minLength": 15, "maxLength": 1200 },
+        "ieeeMemberId": { "type": "string", "maxLength": 40 },
+        "registrationFee": { "type": "number" },
+        "paymentStatus": { "type": "string", "enum": ["PENDING", "VERIFIED", "REJECTED"], "maxLength": 16 },
+        "paymentScreenshotUrl": { "type": "string", "maxLength": 220000 },
+        "paymentUploadedAt": { "type": "string", "maxLength": 64 },
+        "paymentVerifiedAt": { "type": "string", "maxLength": 64 },
+        "paymentVerifiedBy": { "type": "string", "maxLength": 100 },
+        "paymentRejectionReason": { "type": "string", "maxLength": 500 },
+        "status": {
+          "type": "string",
+          "enum": ["Submitted", "Under Review", "Shortlisted", "Finalist", "Rejected"],
+          "maxLength": 32
+        },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": [
+        "id",
+        "teamName",
+        "leaderUid",
+        "leaderName",
+        "leaderEmail",
+        "leaderMobile",
+        "institution",
+        "trackId",
+        "memberCount",
+        "members",
+        "projectTitle",
+        "abstract",
+        "inclusionImpact",
+        "registrationFee",
+        "paymentStatus",
+        "paymentScreenshotUrl",
+        "paymentUploadedAt",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Participant": {
+      "title": "Participant",
+      "description": "Authenticated participant profile stored at participants/{uid}.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "fullName": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 160 },
+        "mobile": { "type": "string", "pattern": "^[6-9][0-9]{9}$", "maxLength": 15 },
+        "whatsapp": { "type": "string", "pattern": "^[6-9][0-9]{9}$", "maxLength": 15 },
+        "department": { "type": "string", "minLength": 2, "maxLength": 120 },
+        "institution": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["uid", "fullName", "email", "mobile", "whatsapp", "department", "institution", "updatedAt"]
+    },
+    "PaymentConfig": {
+      "title": "PaymentConfig",
+      "description": "Active official UPI QR configuration managed by coordinators.",
+      "type": "object",
+      "properties": {
+        "qrImageUrl": { "type": "string", "maxLength": 220000 },
+        "upiId": { "type": "string", "maxLength": 100 },
+        "payeeName": { "type": "string", "maxLength": 100 },
+        "updatedAt": { "type": "string", "maxLength": 64 },
+        "updatedBy": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["qrImageUrl", "upiId", "payeeName", "updatedAt", "updatedBy"]
+    },
+    "PosterConfig": {
+      "title": "PosterConfig",
+      "description": "Active official hackathon poster configuration managed by coordinators.",
+      "type": "object",
+      "properties": {
+        "posterImageUrl": { "type": "string", "maxLength": 900000 },
+        "title": { "type": "string", "maxLength": 120 },
+        "caption": { "type": "string", "maxLength": 220 },
+        "isHidden": { "type": "boolean" },
+        "isCustom": { "type": "boolean" },
+        "updatedAt": { "type": "string", "maxLength": 64 },
+        "updatedBy": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["posterImageUrl", "title", "caption", "isHidden", "isCustom", "updatedAt", "updatedBy"]
+    }
+  },
+  "firestore": {
+    "/registrations/{regId}": {
+      "schema": { "$ref": "#/entities/Registration" },
+      "description": "Team registrations, proposals, and payment audit logs."
+    },
+    "/participants/{uid}": {
+      "schema": { "$ref": "#/entities/Participant" },
+      "description": "Participant profile records keyed by Firebase Auth UID."
+    },
+    "/payment_config/{configId}": {
+      "schema": { "$ref": "#/entities/PaymentConfig" },
+      "description": "Active payment QR (active_qr) and official poster (active_poster) configuration."
+    }
+  }
+}
