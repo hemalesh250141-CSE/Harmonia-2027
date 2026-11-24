@@ -29,21 +29,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onRegisterClick,
 }) => {
   const [posterModalOpen, setPosterModalOpen] = useState(false);
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const shouldReduceMotion = useReducedMotion();
 
   const hasVisiblePoster = !posterConfig.isHidden && Boolean(posterConfig.posterImageUrl);
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (shouldReduceMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMouseOffset({ x: x * 20, y: y * 20 });
+  };
+
+  const handleMouseLeave = () => {
+    setMouseOffset({ x: 0, y: 0 });
+  };
+
   return (
     <section
       id="home"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 overflow-hidden"
     >
       {/* Atmospheric Glowing Animated Orbs & Background Backdrop */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="harmonia-grid-overlay absolute inset-0 opacity-70" />
-        <div className="absolute left-1/2 top-[32%] -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[840px] h-[380px] rounded-full bg-gradient-to-r from-violet-600/25 via-cyan-400/18 to-amber-500/22 blur-[120px] harmonia-glow-pulse" />
-        <div className="absolute left-[12%] top-[20%] w-[300px] h-[300px] rounded-full bg-violet-500/18 blur-[90px] harmonia-float" />
-        <div className="absolute right-[12%] top-[48%] w-[340px] h-[340px] rounded-full bg-cyan-500/15 blur-[100px] harmonia-float" style={{ animationDelay: '2.5s' }} />
+        <div
+          className="absolute left-1/2 top-[32%] -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[840px] h-[380px] rounded-full bg-gradient-to-r from-violet-600/25 via-cyan-400/18 to-amber-500/22 blur-[120px] harmonia-glow-pulse transition-transform duration-300 ease-out"
+          style={{ transform: `translate(calc(-50% + ${mouseOffset.x * 0.8}px), calc(-50% + ${mouseOffset.y * 0.8}px))` }}
+        />
+        <div
+          className="absolute left-[12%] top-[20%] w-[300px] h-[300px] rounded-full bg-violet-500/18 blur-[90px] harmonia-float transition-transform duration-300 ease-out"
+          style={{ transform: `translate(${mouseOffset.x * 1.2}px, ${mouseOffset.y * 1.2}px)` }}
+        />
+        <div
+          className="absolute right-[12%] top-[48%] w-[340px] h-[340px] rounded-full bg-cyan-500/15 blur-[100px] harmonia-float transition-transform duration-300 ease-out"
+          style={{ animationDelay: '2.5s', transform: `translate(${-mouseOffset.x * 1.2}px, ${-mouseOffset.y * 1.2}px)` }}
+        />
 
         {/* Concentric Harmonic Rings */}
         <svg
@@ -99,9 +123,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.06, ease: HARMONIA_EASE }}
             className="w-full max-w-2xl lg:max-w-3xl mx-auto harmonia-float"
+            style={{
+              transform: shouldReduceMotion
+                ? undefined
+                : `perspective(1000px) rotateY(${mouseOffset.x}deg) rotateX(${-mouseOffset.y}deg)`,
+              transition: 'transform 120ms cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
           >
             <div
-              className="overflow-hidden"
+              className="overflow-hidden relative"
               style={{
                 WebkitMaskImage:
                   'radial-gradient(ellipse 78% 72% at 50% 50%, #000 54%, transparent 92%)',
@@ -109,10 +139,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   'radial-gradient(ellipse 78% 72% at 50% 50%, #000 54%, transparent 92%)',
               }}
             >
+              {/* Dynamic 3D Crystal Block Layer Moving Behind the Text */}
+              <div
+                className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 via-cyan-500/20 to-amber-500/25 blur-xl pointer-events-none transition-transform duration-200"
+                style={{
+                  transform: `translate(${mouseOffset.x * 1.5}px, ${mouseOffset.y * 1.5}px) scale(1.1)`,
+                }}
+              />
               <img
                 src={OFFICIAL_ASSETS.harmoniaLogo3D}
                 alt="HARMONIA 27 International Hackathon"
-                className="w-full max-h-[130px] sm:max-h-[190px] lg:max-h-[225px] object-contain mx-auto drop-shadow-[0_24px_55px_rgba(124,58,237,0.6)]"
+                className="w-full max-h-[130px] sm:max-h-[190px] lg:max-h-[225px] object-contain mx-auto drop-shadow-[0_24px_55px_rgba(124,58,237,0.6)] relative z-10"
                 referrerPolicy="no-referrer"
               />
             </div>

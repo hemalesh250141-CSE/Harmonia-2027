@@ -1,0 +1,1752 @@
+# HARMONIA 2027 — COMPLETE WEBSITE DEVELOPMENT, UI/UX, ANIMATION & FUNCTIONALITY MASTER PROMPT
+
+You are an expert full-stack developer, premium UI/UX designer, responsive web designer, motion designer, and Firebase engineer.
+
+You are working on the existing **HARMONIA 2027 International Hackathon website**.
+
+The goal is to transform the current website into a **professional, premium, futuristic, highly interactive, mobile-first international hackathon platform** while preserving the existing functionality, content, authentication, registration system, and backend architecture.
+
+The final result must feel like a website designed by a professional product-design, motion-design, and frontend engineering team.
+
+---
+
+# 1. MOST IMPORTANT RULE — DO NOT CHANGE THE EVENT CONTENT
+
+This project is a **HACKATHON WEBSITE**.
+
+The existing event content is the source of truth.
+
+Do NOT rewrite the website's actual content into music-related content.
+
+Do NOT add unnecessary words such as:
+
+- Music
+- Melody
+- Rhythm
+- Audio
+- Sound
+- Frequency
+- Musical festival
+- Music experience
+
+to the actual event descriptions.
+
+The word **HARMONIA** is only being used as inspiration for the visual style.
+
+### MUSIC-INSPIRED = VISUAL DESIGN ONLY
+
+The music influence must appear ONLY through:
+
+- Wave-like graphics
+- Equalizer-style decorative animations
+- Flowing gradients
+- Spectrum-inspired visual effects
+- Circular visualizers
+- Animated lines
+- Smooth motion
+- Interactive touch effects
+- Dynamic lighting
+- Waveform-inspired graphics
+- Motion transitions
+
+The actual content must continue to represent:
+
+**HARMONIA 2027 INTERNATIONAL HACKATHON**
+
+Do not turn it into a music website.
+
+---
+
+# 2. USE THE EXISTING WEBSITE AS THE FOUNDATION
+
+Before changing anything:
+
+Inspect the complete existing project.
+
+Understand:
+
+- Project structure
+- Framework
+- Components
+- Pages
+- CSS/Tailwind setup
+- Firebase configuration
+- Authentication
+- Database
+- Storage
+- Registration flow
+- Coordinator/admin functionality
+- Existing assets
+- Existing logos
+- Existing poster
+- Existing event content
+- Existing routes
+- Existing APIs
+- Deployment configuration
+
+Do NOT rebuild the entire project unnecessarily.
+
+Do NOT destroy working functionality.
+
+Improve the existing project systematically.
+
+---
+
+# 3. PRIMARY DESIGN GOAL
+
+Transform the current website into:
+
+**PREMIUM + FUTURISTIC + INTERACTIVE + MOBILE-FIRST + PROFESSIONAL + TECHNICAL**
+
+The website should feel visually comparable to a high-end:
+
+- International technology event
+- Developer conference
+- Premium digital platform
+- Modern product website
+- Futuristic event portal
+
+Use the visual sophistication of premium music interfaces as inspiration for:
+
+- motion
+- interaction
+- cards
+- gradients
+- visualizers
+- transitions
+- responsiveness
+
+But maintain a clear **hackathon identity**.
+
+---
+
+# 4. EXISTING COLOR DIRECTION
+
+Preserve the current general color identity.
+
+Use:
+
+- Deep navy
+- Near-black
+- White
+- Cyan
+- Electric blue
+- Purple
+- Gold/yellow
+
+Use gradients carefully.
+
+Gold/yellow should be particularly effective for:
+
+- Register CTA
+- Prize pool
+- Important highlights
+
+Cyan/blue/purple should be used for:
+
+- Interactive elements
+- Decorative graphics
+- Visual accents
+- Motion graphics
+
+Do not make the entire website neon.
+
+Keep it premium.
+
+---
+
+# 5. MOBILE-FIRST IS THE HIGHEST PRIORITY
+
+The majority of users will access this website through mobile devices and many registrations will happen through mobile.
+
+Therefore:
+
+## DESIGN MOBILE FIRST.
+
+Do NOT design desktop first and then shrink everything.
+
+Create a genuinely mobile-first layout.
+
+Test:
+
+- 320px
+- 360px
+- 375px
+- 390px
+- 412px
+- 430px
+
+Then adapt to:
+
+- 768px
+- 1024px
+- 1280px
+- 1440px+
+
+---
+
+# 6. FIX THE CURRENT MOBILE UI COMPLETELY
+
+The current screenshots show several problems:
+
+- Excessive vertical gaps
+- Huge empty areas
+- Cards are too tall
+- Content is too spread out
+- Weak visual hierarchy
+- Poor mobile composition
+- Clipped content
+- Oversized typography in some places
+- Logos are poorly presented
+- Sections don't feel connected
+- Too little visual interaction
+- Website feels like desktop content compressed into mobile
+
+Fix all of these.
+
+The page should feel compact, intentional and premium.
+
+There must be NO unnecessary giant empty spaces.
+
+---
+
+# 7. SPACING SYSTEM
+
+Create a consistent spacing system.
+
+Prefer:
+
+4px
+8px
+12px
+16px
+20px
+24px
+32px
+40px
+48px
+
+Do not randomly use huge margins.
+
+On mobile:
+
+- Reduce section padding
+- Reduce card height
+- Reduce gaps
+- Keep related content visually close
+- Avoid unnecessary vertical whitespace
+
+The user should be able to see more meaningful content within each screen.
+
+---
+
+# 8. PREVENT HORIZONTAL OVERFLOW
+
+This is mandatory.
+
+There must NEVER be:
+
+- Horizontal scrolling
+- Clipped headings
+- Cut-off numbers
+- Overflowing buttons
+- Overflowing logos
+- Oversized cards
+- Images extending outside the viewport
+- Decorative animations increasing page width
+
+Test every important section at:
+
+320px
+360px
+375px
+390px
+412px
+430px
+
+Fix every responsive issue.
+
+---
+
+# 9. PREMIUM MOBILE HEADER
+
+Create a compact sticky mobile header.
+
+LEFT:
+
+Existing HARMONIA logo + HARMONIA 2027 branding.
+
+RIGHT:
+
+Existing action/icon if required + hamburger button.
+
+Design:
+
+- Dark glass background
+- Backdrop blur
+- Thin border
+- Subtle gradient edge
+- Soft shadow
+- Compact height
+
+The header must not occupy excessive vertical space.
+
+Keep it visible while scrolling.
+
+---
+
+# 10. HAMBURGER MENU
+
+Create a premium animated mobile navigation.
+
+When tapped:
+
+Hamburger icon → X
+
+Then:
+
+- Smooth menu opening
+- Glass/blur background
+- Subtle animated gradient
+- Menu items stagger into view
+- Active item highlighted
+- Smooth closing animation
+
+Use the existing website sections.
+
+Do not invent unnecessary navigation items.
+
+Navigation should include the appropriate existing sections such as:
+
+- Home
+- About
+- Tracks
+- Event information
+- Prizes
+- FAQ
+- Contact
+- Registration
+
+Only include sections that actually exist or are implemented.
+
+---
+
+# 11. HERO SECTION
+
+Keep the existing hero content.
+
+Do NOT rewrite it.
+
+Redesign only its visual presentation.
+
+Create a premium hero using:
+
+- Animated grid
+- Flowing gradient shapes
+- Wave-like SVG graphics
+- Floating particles
+- Thin glowing lines
+- Soft light orbs
+- Geometric elements
+- Subtle parallax
+
+The hero should immediately communicate:
+
+**HARMONIA 2027**
+
+and the existing event identity.
+
+Do not make the hero excessively tall on mobile.
+
+---
+
+# 12. MUSIC-INSPIRED VISUAL SYSTEM
+
+Use the visual language of premium music applications WITHOUT turning the website into a music website.
+
+Create:
+
+### Waveform Graphics
+
+Decorative animated waveform lines.
+
+### Equalizer Graphics
+
+Small animated vertical bars used as visual accents.
+
+### Circular Visualizers
+
+Thin animated rings and circles.
+
+### Flowing Waves
+
+Smooth cyan/purple gradient waves.
+
+### Spectrum Effects
+
+Subtle animated spectrum-like gradients.
+
+### Particles
+
+Small glowing particles and connected nodes.
+
+### Light Trails
+
+Smooth moving light streaks.
+
+These are purely decorative UI elements.
+
+They must never obstruct content.
+
+---
+
+# 13. HERO INTERACTIVE VISUALS
+
+Add an animated visual background.
+
+Elements:
+
+- Waveform
+- Particles
+- Grid
+- Gradient blobs
+- Nodes
+- Circular rings
+- Light trails
+
+When the user touches the hero:
+
+Create a subtle interaction:
+
+Touch
+→ ripple
+→ nearby wave expands
+→ nearby particles move
+→ glow appears
+→ effect fades
+
+Keep it lightweight.
+
+---
+
+# 14. TOUCH-RESPONSIVE WEBSITE
+
+The website must feel interactive on mobile.
+
+Do not rely only on hover effects.
+
+Every important interactive element must support touch.
+
+Touch interactions should include:
+
+- Ripple
+- Scale
+- Glow
+- Border illumination
+- Gradient movement
+- Card elevation
+- Icon animation
+
+---
+
+# 15. BUTTON INTERACTION
+
+Every major button should respond to touch.
+
+On press:
+
+- Scale down slightly
+- Gradient becomes brighter
+- Soft glow appears
+- Ripple expands from touch point
+
+On release:
+
+- Smoothly return to normal
+
+Use approximately:
+
+scale(0.96)
+
+Do not over-animate.
+
+---
+
+# 16. GLOBAL TOUCH RIPPLE
+
+Implement a controlled touch ripple system.
+
+When users interact with important interactive elements:
+
+- Create a circular ripple
+- Expand smoothly
+- Fade away
+
+Use it primarily on:
+
+- Buttons
+- Cards
+- Navigation
+- Track cards
+- FAQ
+- Poster
+- Important controls
+
+Do not create excessive effects on every page tap.
+
+---
+
+# 17. INTERACTIVE CARDS
+
+Cards should not feel static.
+
+On touch:
+
+- Slight elevation
+- Slight scale
+- Border illumination
+- Gradient shift
+- Icon animation
+- Decorative waveform activation
+
+On release:
+
+Return smoothly.
+
+Use spring-like easing where appropriate.
+
+---
+
+# 18. DESKTOP POINTER INTERACTION
+
+On desktop:
+
+Create a subtle pointer-following radial glow.
+
+The effect must:
+
+- Be soft
+- Have low opacity
+- Follow cursor smoothly
+- Never block interaction
+
+On mobile, use touch position only temporarily.
+
+---
+
+# 19. LIVE COUNTDOWN
+
+Add a real-time event countdown.
+
+Display:
+
+### DAYS
+### HOURS
+### MINUTES
+### SECONDS
+
+The countdown must use the actual event date/time from the project configuration.
+
+Do NOT hard-code fake countdown values.
+
+Update every second.
+
+When the event starts:
+
+Show:
+
+**LIVE NOW**
+
+When the event ends:
+
+Show:
+
+**EVENT COMPLETED**
+
+---
+
+# 20. COUNTDOWN UI
+
+Do NOT make the countdown look like plain text.
+
+Create premium cards.
+
+Each unit:
+
+- Large number
+- Small label
+- Glass background
+- Subtle gradient border
+- Soft glow
+- Decorative waveform
+
+Mobile:
+
+2 × 2 grid.
+
+Desktop:
+
+4 × 1 row.
+
+---
+
+# 21. COUNTDOWN ANIMATION
+
+When a number changes:
+
+- Old number transitions away
+- New number enters
+- Small scale animation
+- Brief glow
+- Decorative waveform pulses
+
+The transition must feel smooth.
+
+Do not abruptly replace the number.
+
+---
+
+# 22. STATISTICS SECTION
+
+Keep the existing statistics.
+
+But redesign them completely.
+
+Current important statistics include the existing event information.
+
+The prize pool MUST be:
+
+# ₹50,000
+
+Remove every incorrect:
+
+₹1,50,000
+
+reference.
+
+Do not invent another prize amount.
+
+Use compact cards.
+
+Mobile:
+
+2 × 2 grid.
+
+Desktop:
+
+appropriate multi-column layout.
+
+---
+
+# 23. STATISTICS CARD DESIGN
+
+Each card should include:
+
+- Small icon
+- Existing label
+- Large number/value
+- Existing short description
+- Decorative visual element
+
+Do not make the cards extremely tall.
+
+They should fit comfortably on mobile.
+
+---
+
+# 24. STATISTICS ANIMATION
+
+When cards enter the viewport:
+
+- Fade in
+- Slide upward slightly
+- Number counts upward
+- Border illuminates
+- Decorative waveform appears
+
+Do this once.
+
+Keep it smooth.
+
+---
+
+# 25. TRACKS SECTION
+
+Keep the existing five tracks and their actual names/descriptions.
+
+Do not rename them.
+
+Redesign their presentation.
+
+Each card should contain:
+
+- Track number
+- Existing track title
+- Existing description
+- Existing icon if available
+- Decorative waveform
+- Gradient accent
+- Animated border
+
+On touch:
+
+- Slight expansion
+- Brighter border
+- Gradient shift
+- Waveform animation
+- Smooth content reveal if additional existing content is available
+
+Do not invent track information.
+
+---
+
+# 26. ABOUT SECTION
+
+Keep the existing About Event / About Us content.
+
+Do not rewrite it.
+
+Improve only:
+
+- Layout
+- Typography
+- Cards
+- Visual hierarchy
+- Graphics
+- Animations
+- Spacing
+
+Use:
+
+- Animated lines
+- Nodes
+- Gradient shapes
+- Visual markers
+- Subtle motion
+
+Break large text blocks into readable visual sections without changing their wording.
+
+---
+
+# 27. EVENT TIMELINE
+
+If an event timeline/schedule exists in the project, redesign it.
+
+Mobile:
+
+Vertical timeline.
+
+Desktop:
+
+Horizontal or vertical depending on the layout.
+
+Use:
+
+- Animated timeline line
+- Glowing nodes
+- Staggered reveal
+- Compact event cards
+
+Do not invent dates/times.
+
+Use only existing event information.
+
+---
+
+# 28. PRIZE SECTION
+
+Create a visually strong prize section.
+
+The value must clearly be:
+
+# ₹50,000
+
+## TOTAL PRIZE POOL
+
+Use:
+
+- Gold gradient
+- Premium visual effects
+- Circular rings
+- Subtle particles
+- Trophy/award visual if an existing suitable asset/icon is available
+
+Do not invent individual prize amounts.
+
+---
+
+# 29. OFFICIAL POSTER
+
+The website must support an official event poster.
+
+The public website should display the current official poster.
+
+Presentation:
+
+- Premium card
+- Correct aspect ratio
+- No cropping
+- No distortion
+- Rounded corners
+- Gradient edge
+- Soft shadow
+- Subtle glow
+- Touch interaction
+
+On mobile:
+
+Tap poster →
+
+Open full-screen viewer.
+
+Viewer must support:
+
+- Close
+- Proper scaling
+- Zoom where appropriate
+- Smooth open/close animation
+
+---
+
+# 30. COORDINATOR POSTER MANAGEMENT
+
+Add functionality for an authorized coordinator/admin to change the official poster.
+
+Coordinator must be able to:
+
+- Upload poster
+- Preview poster
+- Replace poster
+- Remove poster
+- Save/update poster
+
+The public homepage automatically displays the currently active poster.
+
+Use the existing project backend architecture.
+
+If Firebase is already being used:
+
+Use the existing Firebase:
+
+- Authentication
+- Storage
+- Database
+
+Do not create an unnecessary separate backend.
+
+Only authorized coordinator/admin accounts can modify the poster.
+
+Normal users can only view it.
+
+---
+
+# 31. POSTER UPLOAD UX
+
+Coordinator interface must include:
+
+Current Poster
+
+[Preview]
+
+[Upload New Poster]
+
+[Replace Poster]
+
+[Remove Poster]
+
+[Save Changes]
+
+Show:
+
+- Upload progress
+- Loading state
+- Success state
+- Error state
+
+Example success message:
+
+"Official poster updated successfully."
+
+Do not leave the coordinator unsure whether the operation succeeded.
+
+---
+
+# 32. LOGOS
+
+Fix the presentation of all existing official logos.
+
+Especially:
+
+- HARMONIA
+- Rajalakshmi Institute of Technology
+- IEEE
+- iDataMind
+- Other existing official organizations/partners
+
+Rules:
+
+- Never stretch
+- Never distort
+- Never crop
+- Never change aspect ratio
+- Never recreate official logos
+- Use proper sizing
+- Maintain consistent alignment
+
+Create professional sections such as:
+
+**Organized By**
+
+and
+
+**In Association With**
+
+using the existing content.
+
+Do not place logos inside giant empty containers.
+
+---
+
+# 33. LOGO RESPONSIVENESS
+
+On mobile:
+
+- Logos must fit naturally
+- No overflow
+- No excessive white space
+- Proper aspect ratio
+- Consistent visual sizing
+
+On desktop:
+
+Create a clean horizontal professional arrangement.
+
+---
+
+# 34. FAQ
+
+Keep the existing FAQ content.
+
+Redesign into interactive accordion cards.
+
+Tap:
+
+Question expands.
+
+Answer smoothly appears.
+
+Chevron rotates.
+
+Card gets subtle highlight.
+
+Closing should animate smoothly.
+
+Avoid huge empty accordion areas.
+
+---
+
+# 35. CONTACT SECTION
+
+Keep the existing contact details.
+
+Improve only:
+
+- Card layout
+- Typography
+- Icons
+- Spacing
+- Touch interactions
+- Visual presentation
+
+Do not invent contact information.
+
+---
+
+# 36. REGISTRATION CTA
+
+Make the registration CTA one of the strongest visual elements.
+
+Use:
+
+- Gold/yellow gradient
+- Soft glow
+- Arrow animation
+- Touch ripple
+- Press animation
+- Premium shadow
+
+On mobile:
+
+Large enough for comfortable thumb interaction.
+
+Minimum practical touch target approximately 44px.
+
+Do not make it unnecessarily huge.
+
+---
+
+# 37. REGISTRATION PAGE UI
+
+Most registrations will happen from mobile.
+
+Therefore the registration page must be optimized heavily for mobile.
+
+Ensure:
+
+- Large touch targets
+- Clear labels
+- Comfortable input spacing
+- Correct keyboard behavior
+- No horizontal scrolling
+- Clear validation
+- Easy theme selection
+- Easy team member entry
+- Easy authentication
+
+Do not change the actual registration requirements.
+
+Only improve their UI/UX.
+
+---
+
+# 38. EXISTING REGISTRATION INFORMATION
+
+Preserve the existing registration functionality and fields.
+
+Where applicable, retain:
+
+- Email
+- Name
+- Selected theme
+- Mentor name
+- Team members
+- Team member names
+- Contact numbers
+- Google authentication
+- Existing registration logic
+
+Do not remove existing fields.
+
+Do not invent unnecessary fields.
+
+---
+
+# 39. BACKGROUND SYSTEM
+
+Create a layered premium background.
+
+### Layer 1
+Deep navy/black.
+
+### Layer 2
+Subtle cyan/purple gradients.
+
+### Layer 3
+Very faint technical grid.
+
+### Layer 4
+Slow moving gradient light.
+
+### Layer 5
+Subtle particles.
+
+### Layer 6
+Decorative waveform lines.
+
+Keep opacity low.
+
+Text must always remain readable.
+
+---
+
+# 40. GLASSMORPHISM
+
+Use glassmorphism selectively.
+
+Cards can use:
+
+- Semi-transparent dark background
+- Backdrop blur
+- Thin border
+- Inner highlight
+- Soft shadow
+
+Do not make every element glass.
+
+Use it to create hierarchy.
+
+---
+
+# 41. PREMIUM CARD SYSTEM
+
+Create a consistent card system.
+
+Cards should have:
+
+- Consistent radius
+- Consistent padding
+- Subtle border
+- Gradient edge
+- Controlled shadow
+- Interactive state
+- Touch response
+
+Do not randomly style every card differently.
+
+---
+
+# 42. TYPOGRAPHY SYSTEM
+
+Improve typography without changing wording.
+
+Create hierarchy:
+
+Small label
+
+↓
+
+Section heading
+
+↓
+
+Main heading
+
+↓
+
+Supporting text
+
+↓
+
+CTA
+
+Use modern clean typography.
+
+Use responsive font sizes.
+
+Use CSS clamp where appropriate.
+
+Ensure text never clips.
+
+---
+
+# 43. MOBILE TYPOGRAPHY
+
+Mobile headings must:
+
+- Fit the screen
+- Wrap naturally
+- Never overflow
+- Never get clipped
+- Maintain strong hierarchy
+
+Do not make headings unnecessarily huge.
+
+---
+
+# 44. SCROLL ANIMATIONS
+
+Use scroll-triggered animations.
+
+Examples:
+
+- Fade up
+- Fade in
+- Scale
+- Slide
+- Blur-to-sharp
+- Staggered cards
+- Number counters
+- Gradient reveals
+
+Use IntersectionObserver or an equivalent efficient method.
+
+Do not animate everything at once.
+
+---
+
+# 45. SECTION TRANSITIONS
+
+Do not use huge blank gaps between sections.
+
+Instead create continuity through:
+
+- Thin glowing lines
+- Waveform dividers
+- Gradient transitions
+- Particles
+- Grid continuation
+- Animated curves
+
+Every section should visually connect to the next.
+
+---
+
+# 46. PAGE LOAD ANIMATION
+
+Create a short premium loading/reveal animation.
+
+Possible sequence:
+
+1. Logo appears
+2. Background gradient activates
+3. Decorative waveform appears
+4. Hero content fades up
+5. CTA appears
+6. Countdown appears
+
+Keep it short.
+
+Approximately 300–800ms.
+
+Do not unnecessarily delay page usability.
+
+---
+
+# 47. MICRO-INTERACTIONS
+
+Add polished details:
+
+- CTA arrow moves slightly
+- Buttons respond to touch
+- Cards lift
+- Icons animate
+- Borders illuminate
+- Countdown pulses
+- Numbers count
+- Poster subtly reacts
+- Menu items stagger
+- FAQ chevrons rotate
+- Track visuals activate
+- Section dividers animate
+
+Do not animate everything simultaneously.
+
+---
+
+# 48. OPTIONAL POINTER PARALLAX
+
+For desktop only:
+
+Allow certain decorative elements to move very slightly based on cursor position.
+
+Examples:
+
+- Background gradient
+- Floating particles
+- Decorative rings
+
+Keep movement extremely subtle.
+
+Never affect readability.
+
+---
+
+# 49. PERFORMANCE
+
+The website must remain fast.
+
+Prefer:
+
+- CSS animations
+- Transform
+- Opacity
+- SVG
+- Lightweight JavaScript
+- IntersectionObserver
+- Lazy-loaded images
+
+Avoid:
+
+- Heavy video backgrounds
+- Excessive particles
+- Large animation libraries unless already required
+- Hundreds of DOM elements
+- Expensive continuous JavaScript calculations
+
+Target smooth scrolling and approximately 60 FPS where possible.
+
+---
+
+# 50. REDUCED MOTION
+
+Support:
+
+`prefers-reduced-motion`
+
+When enabled:
+
+- Reduce particle movement
+- Reduce parallax
+- Reduce waveform animation
+- Reduce transitions
+
+The website must remain fully functional.
+
+---
+
+# 51. DESKTOP DESIGN
+
+After mobile is perfected, adapt the design to desktop.
+
+Desktop should provide:
+
+- Wider content
+- Larger hero visuals
+- Multi-column cards
+- Sophisticated graphics
+- More horizontal composition
+- Pointer interaction
+- Larger poster presentation
+
+But it must remain the same design system.
+
+Do not create a completely different desktop site.
+
+---
+
+# 52. TABLET DESIGN
+
+Ensure the layout also works properly at approximately:
+
+768px–1023px.
+
+Avoid:
+
+- awkward 3-column layouts
+- oversized cards
+- excessive empty spaces
+- broken navigation
+
+---
+
+# 53. AUTHENTICATION MUST REMAIN WORKING
+
+Do NOT break existing:
+
+- Google authentication
+- Existing authentication flow
+- User sessions
+- Coordinator/admin authorization
+
+The UI redesign must not interfere with authentication.
+
+---
+
+# 54. FIREBASE / BACKEND MUST REMAIN WORKING
+
+Preserve existing:
+
+- Firebase configuration
+- Authentication
+- Firestore/database
+- Storage
+- Existing APIs
+- Existing routes
+- Existing security rules
+
+Do not replace the backend just for UI improvements.
+
+---
+
+# 55. COORDINATOR ROLE
+
+If the project already has coordinator/admin functionality:
+
+Preserve it.
+
+Extend it for:
+
+### Official Poster Management
+
+Only authorized coordinator/admin accounts can:
+
+- upload
+- replace
+- remove
+- update
+
+the official poster.
+
+Do not expose these controls publicly.
+
+---
+
+# 56. CONTENT INTEGRITY
+
+Never invent:
+
+- Sponsors
+- Judges
+- Speakers
+- Mentors
+- Prize categories
+- Prize amounts
+- Event dates
+- Contacts
+- Track information
+
+Use the existing project data.
+
+The only explicit content correction requested is:
+
+# ₹50,000 PRIZE POOL
+
+---
+
+# 57. ACCESSIBILITY
+
+Ensure:
+
+- Good contrast
+- Readable typography
+- Accessible buttons
+- Keyboard navigation
+- Visible focus states
+- Proper labels
+- Alt text for images/logos
+- Touch-friendly controls
+
+Do not rely only on color to communicate state.
+
+---
+
+# 58. FINAL MOBILE PAGE STRUCTURE
+
+The final mobile experience should be compact and visually connected.
+
+Approximate structure:
+
+HEADER
+
+↓
+
+HERO
+
+↓
+
+LIVE COUNTDOWN
+
+↓
+
+REGISTER / EXPLORE CTA
+
+↓
+
+OFFICIAL POSTER
+
+↓
+
+ORGANIZED BY / ASSOCIATION LOGOS
+
+↓
+
+STATISTICS
+
+↓
+
+ABOUT EVENT / ABOUT US
+
+↓
+
+TRACKS
+
+↓
+
+EVENT INFORMATION / TIMELINE
+
+↓
+
+PRIZE POOL — ₹50,000
+
+↓
+
+FAQ
+
+↓
+
+CONTACT
+
+↓
+
+FOOTER
+
+Use only sections that exist or are required by the existing project.
+
+Do not create unnecessary pages.
+
+---
+
+# 59. MOBILE UX PRIORITY
+
+The user should be able to:
+
+- Understand the event quickly
+- See the countdown
+- See the prize pool
+- Explore tracks
+- View the poster
+- Register quickly
+- Navigate easily
+- Read everything comfortably
+- Interact with cards naturally
+
+without fighting the interface.
+
+---
+
+# 60. FINAL QUALITY CHECK
+
+Before declaring the project complete, test:
+
+### MOBILE
+
+320px
+360px
+375px
+390px
+412px
+430px
+
+### TABLET
+
+768px
+1024px
+
+### DESKTOP
+
+1280px
+1440px
+1920px
+
+Check:
+
+✓ No horizontal scrolling  
+✓ No clipped text  
+✓ No oversized cards  
+✓ No giant empty spaces  
+✓ No broken buttons  
+✓ No broken menu  
+✓ No distorted logos  
+✓ No stretched images  
+✓ No poster overflow  
+✓ Countdown works  
+✓ Countdown updates every second  
+✓ Countdown switches to LIVE NOW  
+✓ Prize pool is ₹50,000  
+✓ Official poster displays correctly  
+✓ Coordinator can update poster  
+✓ Poster changes persist  
+✓ Registration works  
+✓ Authentication works  
+✓ Existing Firebase works  
+✓ Existing backend works  
+✓ Touch interactions work  
+✓ Animations are smooth  
+✓ Reduced motion works  
+✓ Page loads quickly  
+✓ Mobile registration is comfortable  
+
+---
+
+# 61. IMPORTANT — DO NOT JUST REDESIGN THE HOMEPAGE
+
+Redesign the COMPLETE USER EXPERIENCE.
+
+That includes:
+
+- Homepage
+- Navigation
+- Countdown
+- Statistics
+- Tracks
+- About sections
+- Poster
+- Registration UI
+- FAQ
+- Contact
+- Footer
+- Coordinator poster management
+- Mobile interactions
+- Responsive behavior
+
+Every part must feel like it belongs to the same design system.
+
+---
+
+# 62. DO NOT MAKE IT LOOK AI-GENERATED
+
+Avoid generic AI website patterns such as:
+
+- Random glowing blobs everywhere
+- Excessive glass cards
+- Excessive rounded rectangles
+- Random gradients
+- Excessive neon
+- Generic dashboard layouts
+- Unnecessary 3D objects
+- Excessive animations
+- Fake content
+- Huge typography without purpose
+
+Every visual element must have a reason.
+
+The result must feel deliberately art-directed.
+
+---
+
+# 63. THE DESIGN SHOULD FEEL ALIVE
+
+The page should not be static.
+
+Subtle movement should exist in:
+
+- Background
+- Waveforms
+- Particles
+- Gradient lighting
+- Countdown
+- Cards
+- Buttons
+- Navigation
+- Section transitions
+
+But motion should remain controlled.
+
+The user should feel:
+
+**"This website is alive."**
+
+without feeling:
+
+**"This website is overloaded with animations."**
+
+---
+
+# 64. DESIGN REFERENCE PRINCIPLE
+
+Use the visual sophistication of premium modern music interfaces as inspiration for:
+
+- Interaction
+- Animation
+- Visualizer graphics
+- Cards
+- Touch response
+- Motion
+- Gradients
+- Transitions
+
+BUT DO NOT COPY ANY PARTICULAR WEBSITE.
+
+Create an original HARMONIA 2027 design.
+
+---
+
+# 65. FINAL DEVELOPMENT INSTRUCTION
+
+Do everything in one complete development pass.
+
+Do not stop after:
+
+- changing colors
+- changing cards
+- changing the hero
+- adding one animation
+
+Implement the complete experience.
+
+First inspect the existing codebase.
+
+Then:
+
+1. Understand the current architecture.
+2. Preserve all working functionality.
+3. Create the design system.
+4. Redesign mobile UI.
+5. Fix spacing.
+6. Fix responsive behavior.
+7. Redesign header/navigation.
+8. Redesign hero.
+9. Add interactive visual graphics.
+10. Add live countdown.
+11. Redesign statistics.
+12. Correct prize pool to ₹50,000.
+13. Redesign tracks.
+14. Improve About sections.
+15. Improve poster presentation.
+16. Add coordinator poster management.
+17. Fix all logos.
+18. Improve FAQ.
+19. Improve registration UI.
+20. Improve contact/footer.
+21. Add touch interactions.
+22. Add scroll animations.
+23. Add micro-interactions.
+24. Add desktop pointer interactions.
+25. Optimize performance.
+26. Test mobile.
+27. Test tablet.
+28. Test desktop.
+29. Fix every overflow/spacing issue.
+30. Verify authentication and registration.
+31. Verify Firebase/backend functionality.
+32. Verify coordinator poster functionality.
+33. Verify the final deployed build.
+
+---
+
+# 66. FINAL RESULT
+
+The finished website should be:
+
+## HARMONIA 2027
+### INTERNATIONAL HACKATHON
+
+A premium, futuristic, mobile-first, interactive hackathon website.
+
+It should have:
+
+**Beautiful UI**
+
+**Excellent spacing**
+
+**Strong mobile UX**
+
+**Live countdown**
+
+**₹50,000 prize pool**
+
+**Professional logos**
+
+**Official poster system**
+
+**Coordinator poster management**
+
+**Interactive touch animations**
+
+**Waveform/equalizer-inspired visual effects**
+
+**Smooth scroll animations**
+
+**Premium glass/gradient interface**
+
+**Responsive design**
+
+**Fast performance**
+
+**Existing authentication preserved**
+
+**Existing registration preserved**
+
+**Existing Firebase/backend preserved**
+
+**Professional desktop experience**
+
+and most importantly:
+
+### DO NOT CHANGE THE EXISTING EVENT CONTENT.
+
+### DO NOT TURN THE WEBSITE CONTENT INTO A MUSIC WEBSITE.
+
+### USE THE MUSIC-INSPIRED STYLE ONLY FOR THE UI, GRAPHICS, MOTION AND INTERACTIONS.
+
+The final website should look substantially more polished than the current screenshots and should feel like a professionally designed international hackathon platform rather than a generic template.

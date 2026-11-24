@@ -107,14 +107,16 @@ export const OFFICIAL_ASSETS = {
     '/assets/aistudio/Screenshot_2026-11-23_150717-Picsart-BackgroundRemover-Picsart-AiImageEnhancer_11db3aac.png',
   ritWhiteLogo:
     '/assets/aistudio/WhatsApp_Image_2026-11-23_at_2_56_19_PM-Picsart-BackgroundRemover_808bbbaf.jpeg',
-  ritDarkLogo: '/assets/logos/rit-logo.png',
-  ritEmblem: '/assets/logos/rit-emblem.png',
+  ritDarkLogo:
+    '/assets/aistudio/WhatsApp_Image_2026-11-23_at_2_56_19_PM-Picsart-BackgroundRemover_808bbbaf.jpeg',
+  ritEmblem:
+    '/assets/aistudio/WhatsApp_Image_2026-11-23_at_2_56_19_PM-Picsart-BackgroundRemover_808bbbaf.jpeg',
   accreditations: '/assets/logos/accreditations-logo.png',
   ieeeBlueLogo: '/assets/aistudio/IMG_3d102db4-a155-4cd1-91f8-6389e513056c_87e99980.png',
   ieeeCisLogo: '/assets/aistudio/IMG_4cdac4ae-329c-445c-b334-7abe36f63f99.jpg_0a6db44c.jpeg',
-  ieeeCsCrop: '/assets/logos/ieee-logo.png',
+  ieeeCsCrop: '/assets/aistudio/IMG_3d102db4-a155-4cd1-91f8-6389e513056c_87e99980.png',
   idatamindWebp: '/assets/aistudio/ll_6ea303a4.webp',
-  idatamindCrop: '/assets/logos/idatamind-logo.png',
+  idatamindCrop: '/assets/aistudio/ll_6ea303a4.webp',
   officialPoster: '/assets/aistudio/WhatsApp_Image_2026-11-23_at_1.23.00_PM_5ad45200.jpeg',
 };
 
